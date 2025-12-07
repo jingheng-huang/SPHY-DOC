@@ -2,14 +2,14 @@ Welcome to SPHY Preprocess Tutorial!
 ===============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :numbered:
    :caption: Contents:
    
-   Prepare_Environment
-   Introduce_the_preprocessing_tool
-   Run_the_preprocessing_Tool
-   Run_model
+   1.Prepare_Environment
+   2.Introduce_the_preprocessing_tool
+   3.Run_the_preprocessing_Tool
+   4.Run_model
    
 
 
