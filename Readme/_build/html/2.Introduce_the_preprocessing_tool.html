@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="yes" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Introduction to the Pre-Processing Tool &mdash; SPHY Pre-Processing Tool 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=be7ba928"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Run the Pre-Processing Tool" href="3.Run_the_preprocessing_Tool.html" />
+    <link rel="prev" title="1. Set Up the Environment" href="1.Prepare_Environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHY Pre-Processing Tool
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.Prepare_Environment.html">1. Set Up the Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Introduction to the Pre-Processing Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview-of-the-structure">2.1. Overview of the Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-the-configuration-file">2.2. Introduction to the Configuration File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-settings">2.2.1. General Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forcing-settings">2.2.2. Forcing Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glacier-settings">2.2.3. Glacier Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statistics-settings">2.2.4. Statistics Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-settings">2.2.5. Calibration Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database-settings">2.2.6. Database Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3.Run_the_preprocessing_Tool.html">3. Run the Pre-Processing Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.Run_model.html">4. Run the Model</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHY Pre-Processing Tool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Introduction to the Pre-Processing Tool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/2.Introduce_the_preprocessing_tool.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-pre-processing-tool">
+<h1><span class="section-number">2. </span>Introduction to the Pre-Processing Tool<a class="headerlink" href="#introduction-to-the-pre-processing-tool" title="Link to this heading"></a></h1>
+<section id="overview-of-the-structure">
+<h2><span class="section-number">2.1. </span>Overview of the Structure<a class="headerlink" href="#overview-of-the-structure" title="Link to this heading"></a></h2>
+<div class="admonition-files admonition">
+<p class="admonition-title">Files</p>
+<p><img alt="Alt text" src="_images/image-1.png" /></p>
+<p>📁 Tools</p>
+<ul class="simple">
+<li><p>Scripts that assist with data preparation or post‑processing of model outputs.</p></li>
+</ul>
+<p>📁 global_database</p>
+<ul class="simple">
+<li><p>Global datasets required for running the model. Can be downloaded from <a class="reference external" href="https://www.dropbox.com/scl/fo/xwegzjtjsuu4khnzut948/APClH3tg_iQVSXqD2SqnFBc?rlkey=4zpzgke2a1wg2pckdkus4llko&amp;amp;st=myfz42qo&amp;amp;dl=0">SPHY global database</a>.</p></li>
+</ul>
+<p>📁 src</p>
+<ul class="simple">
+<li><p>Source code.</p></li>
+</ul>
+<p>📄 environment.yml</p>
+<ul class="simple">
+<li><p>YAML file for creating the conda environment with all required dependencies.</p></li>
+</ul>
+<p>📄 preprocess_Alahca.cfg</p>
+<ul class="simple">
+<li><p>Example configuration file defining the model resolution and all required input paths/settings.</p></li>
+</ul>
+</div>
+<p>👉 Run the program using: <code class="docutils literal notranslate"><span class="pre">./run_preprocess.sh</span> <span class="pre">XX.cfg</span></code><br />
+<code class="docutils literal notranslate"><span class="pre">XX.cfg</span></code> is the global configuration file. A detailed description of all settings is provided in the next section.</p>
+<hr class="docutils" />
+</section>
+<section id="introduction-to-the-configuration-file">
+<span id="preprocessing-tool-config-section"></span><h2><span class="section-number">2.2. </span>Introduction to the Configuration File<a class="headerlink" href="#introduction-to-the-configuration-file" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">preprocess_Alahca.cfg</span></code> is an example configuration file. All parameters required to run this tool are specified here.
+There are <strong>six sections</strong> in total (General, Forcing, Glacier, Statistic, Calibration, Database). See below for the description of the parameters in each section.</p>
+<hr class="docutils" />
+<section id="general-settings">
+<span id="id1"></span><h3><span class="section-number">2.2.1. </span>General Settings<a class="headerlink" href="#general-settings" title="Link to this heading"></a></h3>
+<p><img alt="Alt text" src="_images/image-13.png" /></p>
+<ul class="simple">
+<li><p><strong>program_path</strong>: Folder where the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory (main script) is located.</p></li>
+<li><p><strong>out_folder</strong>: Directory where the outputs will be saved. <span style="color:red"> Note this is not the folder where model results will be saved; this is the folder where you will run the model </span>. This will be explained later in <a class="reference internal" href="3.Run_the_preprocessing_Tool.html"><span class="doc">Run the Pre-Processing Tool</span></a>.</p></li>
+<li><p><strong>main_and_subbasin_shps</strong>: Path to the basin and sub‑basin (if available) shapefiles. The biggest main basin must be the first one.</p></li>
+<li><p><strong>model_res</strong>: Spatial resolution of the model grid (unit: meters).</p></li>
+<li><p><strong>ys and ye</strong>: Start and end year of the simulation.</p></li>
+<li><p><strong>spinupyears</strong>: Number of spin‑up years.</p></li>
+<li><p><strong>forcing_cut</strong>: Trim the forcing data in the database to the specified time range. At least need to cover the modeling period.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="forcing-settings">
+<h3><span class="section-number">2.2.2. </span>Forcing Settings<a class="headerlink" href="#forcing-settings" title="Link to this heading"></a></h3>
+<p><img alt="Alt text" src="_images/image-14.png" /></p>
+<ul class="simple">
+<li><p><strong>prcp_bands_num</strong>: Number of elevation bands used for precipitation correction. The elevation will be evenly divided based on quantiles. Set this to 1 if elevation bands are not required. In other words, the basin is treated as a single unit.</p></li>
+<li><p><strong>pcrp_correction_factors</strong>: Multiplicative precipitation correction factors for each elevation band (values &gt;1 increase precipitation, values &lt;1 decrease i).</p></li>
+<li><p><strong>tem_bands_num</strong>: Number of elevation bands for  temperature correction.</p></li>
+<li><p><strong>t_deltas</strong>: Temperature correction factor offsets for each band (°C). Positive values increase temperature, and negative values decrease temperature.</p></li>
+<li><p><strong>tem_lapserate</strong>: Temperature lapse rate used for downscaling the forcing dataset to the fine‑resolution grid (unit: °C/m).  Typical value is <strong>0.0065 °C/m</strong>.  The model computes the elevation difference between the forcing DEM and the basin DEM, and then applies the lapse rate to downscale temperature. <span style="color:blue">You may leave <code class="docutils literal notranslate"><span class="pre">tem_lapserate</span></code> empty. The program will automatically compute a lapse rate based on the elevation–temperature relationship in the forcing dataset.</span></p></li>
+<li><p><strong>gradient_downscale_flag</strong>: Enable precipitation gradient downscaling (1 = on, 0 = off).</p></li>
+<li><p><strong>p_gradients</strong>: Precipitation gradient for downscaling (<strong>unit: %/m</strong>).</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="glacier-settings">
+<span id="glacier-setting"></span><h3><span class="section-number">2.2.3. </span>Glacier Settings<a class="headerlink" href="#glacier-settings" title="Link to this heading"></a></h3>
+<p><img alt="Alt text" src="_images/image-15.png" /></p>
+<ul class="simple">
+<li><p><strong>choose_rgi_id_zone_file</strong>: A CSV file where the first row contains the region codes (<a class="reference external" href="https://www.glims.org/RGI/">RGI V7</a>) and the second row contains the glacier IDs. You can choose any glaciers you want. The program will then use the selected IDs to calculate and output the regional mean mass-balance time series. Using <a class="reference external" href="https://www.glims.org/RGI/">RGI V6</a> is also allowed, but the <a class="reference internal" href="#database-par"><span class="std std-ref">source of glacier data</span></a> need to be changed to RGI V6.<br />
+<span style="color:blue"> You may leave this option empty; in that case, the program will automatically generate it and include all glaciers within the basin. </span></p></li>
+</ul>
+<p><strong>Example:</strong><br />
+<img alt="Alt text" src="_images/image-6.png" /></p>
+<ul class="simple">
+<li><p><strong>glacier_resolution</strong>: Resolution for glacier modeling, depending on the input DEM for glaciers (specified in the Database section).</p></li>
+<li><p><strong>glacier_tem_lapse</strong>: Temperature lapse rate for downscaling the coarse forcing dataset to the fine glacier grid (typical: −0.0065 °C/m).</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="statistics-settings">
+<span id="snow-ele-bands"></span><h3><span class="section-number">2.2.4. </span>Statistics Settings<a class="headerlink" href="#statistics-settings" title="Link to this heading"></a></h3>
+<p><img alt="Alt text" src="_images/image-16.png" /></p>
+<ul class="simple">
+<li><p><strong>scf_statistic_flag</strong>: Enable snow‑cover statistics (1 = on, 0 = off).</p></li>
+<li><p><strong>snow_threshold_min</strong>: Minimum snow depth threshold (e.g., mm) to classify a pixel as snow‑covered.</p></li>
+<li><p><strong>statistic_bands_number</strong>: Number of elevation bands used for snow statistics. The elevation will be evenly divided based on quantiles. <span style="color:blue"> If set to 1, then the output is the average of the whole basin.</span></p></li>
+<li><p><strong>wintermonth</strong>: Months considered as winter for winter‑discharge outputs.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="calibration-settings">
+<span id="calibration-config"></span><h3><span class="section-number">2.2.5. </span>Calibration Settings<a class="headerlink" href="#calibration-settings" title="Link to this heading"></a></h3>
+<p>This section can be ignored if the auto-calibration is not needed.
+<img alt="Alt text" src="_images/image-10.png" /></p>
+<ul class="simple">
+<li><p><strong>pest_flag</strong>: Enable automatic model calibration using PEST (1 = on, 0 = off).  <span style="color:blue"> If set to 1, all parameters in this section must be provided.  </span></p></li>
+<li><p><strong>observation_file</strong>: Excel <code class="docutils literal notranslate"><span class="pre">.xlsx</span></code> file containing all observation data used for calibration. Example structure:<br />
+<img alt="Alt text" src="_images/image-11.png" /></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TR</span></code> = total runoff, <code class="docutils literal notranslate"><span class="pre">WR</span></code> = winter runoff.  Values 1 to N correspond to basins/sub‑basins in the same order as specified in <code class="docutils literal notranslate"><span class="pre">main_and_subbasin_shps</span></code> of <a class="reference internal" href="#general-settings"><span class="std std-ref">General settings</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scf</span></code> = snow‑cover fraction.  <span style="color:red;"> 1 to N refer to elevation bands (low → high), <strong>not</strong> sub‑basins</span>. In other words, the program does not support SCF calibration at sub-basin scale.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gmb_mean</span></code> = Annual glacier mass balance observations for the entire basin. Will be compared with the model outputs, determined by <code class="docutils literal notranslate"><span class="pre">choose_rgi_id_zone_file</span></code> in the <a class="reference internal" href="#glacier-setting"><span class="std std-ref">glacier setting</span></a>.</p></li>
+</ul>
+</li>
+<li><p><strong>observation_sheetname_date</strong>: Sheet name and time range (YYYY‑MM‑DD) used for each dataset.</p></li>
+<li><p><strong>simufiles_to_compare</strong>: Simulation output files to compare with observations. <span style="color:blue;"> Note that the output filenames are fixed — do <strong>not</strong> change the name here. </span> At the moment, only the following variables are supported for calibration:</p>
+<ul>
+<li><p><strong>Total runoff</strong> — <code class="docutils literal notranslate"><span class="pre">'QAllDTS.csv':</span> <span class="pre">'value1'</span></code> . Values 1 to N correspond to basins/sub‑basins. If you have sub-basins, you can add more, e.g., <code class="docutils literal notranslate"><span class="pre">'QAllDTS.csv':</span> <span class="pre">'value2'</span></code>.</p></li>
+<li><p><strong>Winter discharge</strong> — <code class="docutils literal notranslate"><span class="pre">'WRDTS.csv':</span> <span class="pre">'value1'</span></code>. Used to give extra weight to winter low‑flow.  You may also use <code class="docutils literal notranslate"><span class="pre">'WBDTS.csv'</span></code> when winter discharge represents most baseflow. Same as the total runoff, Values 1 to N correspond to basins/sub‑basins.</p></li>
+<li><p><strong>Glacier mass balance</strong> — <code class="docutils literal notranslate"><span class="pre">'simu_GMB.csv':</span> <span class="pre">'value'</span></code>. Only a single time series will be generated, which determined by <code class="docutils literal notranslate"><span class="pre">choose_rgi_id_zone_file</span></code> in the <a class="reference internal" href="#glacier-setting"><span class="std std-ref">glacier setting</span></a>. No elevation bands, no sub-basins.</p></li>
+<li><p><strong>Snow‑cover fraction</strong> — <code class="docutils literal notranslate"><span class="pre">'SCF_TSS_Monthly.csv':</span> <span class="pre">'1'</span></code>  <span style="color:red;"> 1 to N correspond to elevation bands (low → high), not basins.</span> The number of bands are defined in <a class="reference internal" href="#snow-ele-bands"><span class="std std-ref">statistic_bands_number</span></a></p></li>
+</ul>
+</li>
+<li><p><strong>calculate_components_period</strong>: Start and end year for calculating runoff components.</p></li>
+<li><p><strong>hostname</strong>: Hostname or IPv4 of the compute node (<code class="docutils literal notranslate"><span class="pre">hostname</span></code> or <code class="docutils literal notranslate"><span class="pre">hostname</span> <span class="pre">-I</span></code>).</p></li>
+<li><p><strong>partion</strong>: Partion name (e.g., using <code class="docutils literal notranslate"><span class="pre">sinfo</span></code> to check on Slurm system).</p></li>
+<li><p><strong>agents_num</strong>: Number of agents/simultaneous jobs (suggested: 2 × number of parameters + 1).</p></li>
+<li><p><strong>comment</strong>: Comment this auto-calibration run; will be saved in <code class="docutils literal notranslate"><span class="pre">pest_run_report.csv</span></code>. For example: 'decrease free parameters', 'using modified glacier modules', 'test run', etc.</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you run the auto-calibration, <code class="docutils literal notranslate"><span class="pre">pest_run_report.csv</span></code> stores all parameter combinations tested by PEST, plus basic statistics (e.g., NSE and component contributions). This file is saved automatically.</p>
+</div>
+<hr class="docutils" />
+</section>
+<section id="database-settings">
+<span id="database-par"></span><h3><span class="section-number">2.2.6. </span>Database Settings<a class="headerlink" href="#database-settings" title="Link to this heading"></a></h3>
+<p><img alt="Alt text" src="_images/image-12.png" /></p>
+<p>This section defines the sources of all datasets.<br />
+You may use your own datasets as long as the data formats are consistent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>It is recommended to provide <strong>absolute paths</strong> rather than relative paths.</p></li>
+<li><p>For different model resolutions, use HydroDEM files with similar resolutions. <a class="reference external" href="https://www.hydrosheds.org/">HydroDEM</a> is a hydrologically conditioned DEM (pit‑filled, corrected), suitable for watershed boundary extraction.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1.Prepare_Environment.html" class="btn btn-neutral float-left" title="1. Set Up the Environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="3.Run_the_preprocessing_Tool.html" class="btn btn-neutral float-right" title="3. Run the Pre-Processing Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, jingheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="yes" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Run the Pre-Processing Tool &mdash; SPHY Pre-Processing Tool 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=be7ba928"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Run the Model" href="4.Run_model.html" />
+    <link rel="prev" title="2. Introduction to the Pre-Processing Tool" href="2.Introduce_the_preprocessing_tool.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHY Pre-Processing Tool
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.Prepare_Environment.html">1. Set Up the Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Introduce_the_preprocessing_tool.html">2. Introduction to the Pre-Processing Tool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Run the Pre-Processing Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-the-scripts-and-database">3.1. Download the Scripts and Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepare-the-basic-inputs">3.2. Prepare the Basic Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-the-configuration-file">3.3. Set Up the Configuration File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-tool">3.4. Run the Tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4.Run_model.html">4. Run the Model</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHY Pre-Processing Tool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Run the Pre-Processing Tool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/3.Run_the_preprocessing_Tool.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="run-the-pre-processing-tool">
+<h1><span class="section-number">3. </span>Run the Pre-Processing Tool<a class="headerlink" href="#run-the-pre-processing-tool" title="Link to this heading"></a></h1>
+<p>In this section, an example is provided to show how to use the pre-processing tool to set up the model,
+and how to run the model with and without auto-calibration.</p>
+<p>The case basin is <strong>Ala-Archa</strong>, which is located in the Tien shan.<br />
+<img alt="alt text" src="_images/image-44.png" />
+(He et al.,2020)</p>
+<p>Located in Kyrgyzstan, Central Asia, the Ala-Archa basin drains an area of 233 km^2 (Fig. 1), and glaciers cover around 17% of the basin area. The elevation of the study basin extends from 1560 to 4864 m a.s.l., and the elevation range of the glacierized area extends from 3218 to 4857 m a.s.l., with about 76% located between 3700 and 4100 m a.s.l. Detailed basin information can be found at He et al. (2020)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This catchment is chosen because it is relatively small, which helps speed up the demonstration. However, in general, <span style="color:red"> using this tool on catchments of this size is not recommended </span>. Small catchments require a much finer-resolution DEM to correctly delineate watershed boundaries, which increases the likelihood of errors. Recommended size: &gt; 10,000 km^2.</p>
+</div>
+<section id="download-the-scripts-and-database">
+<h2><span class="section-number">3.1. </span>Download the Scripts and Database<a class="headerlink" href="#download-the-scripts-and-database" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Create a folder on your local PC. Here, I create a folder called <strong>example</strong> on the F drive. More practical: name it &quot;Ala-Archa,&quot; which is the basin name.</p></li>
+<li><p>Download the scripts from <a class="reference external" href="https://github.com/jingheng-huang/SphySetup">GitHub</a>.</p></li>
+<li><p>Global datasets required for running the tool can be downloaded from Dropbox: <code class="docutils literal notranslate"><span class="pre">https://www.dropbox.com/scl/fo/xwegzjtjsuu4khnzut948/APClH3tg_iQVSXqD2SqnFBc?rlkey=4zpzgke2a1wg2pckdkus4llko&amp;st=hrntq8kg&amp;dl=0.</span></code><br />
+Note the database is big (~200GB); you can also save it to your hard drive.</p></li>
+</ul>
+<p><img alt="Alt text" src="_images/image-25.png" /></p>
+<p>The description of the structure has been provided in <a class="reference internal" href="2.Introduce_the_preprocessing_tool.html"><span class="doc">Introduction to the Pre-Processing Tool</span></a>.</p>
+</section>
+<section id="prepare-the-basic-inputs">
+<h2><span class="section-number">3.2. </span>Prepare the Basic Inputs<a class="headerlink" href="#prepare-the-basic-inputs" title="Link to this heading"></a></h2>
+<p><span style="color:blue"> The key point is to prepare a basin-boundary shapefile, which will be used to clip the database to the study watershed. </span> If you plan to use the auto-calibration module,  an <code class="docutils literal notranslate"><span class="pre">observations.xlsx</span></code> file that contains some observation datasets is also needed. The following preparation steps and folder-naming conventions are simply personal preference, you may freely adjust them according to your own workflow.</p>
+<ul class="simple">
+<li><p>Create two folders called <strong>basinshp</strong> and <strong>observations</strong>. You may place them anywhere; here, I put them under <strong>'Example'</strong>.
+<img alt="Alt text" src="_images/image-26.png" /></p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>In the <strong>basinshp</strong> folder, place the basin shapefile (<strong>projection: WGS84</strong>). This shapefile will be used as the standard basin boundary for clipping the DEM and other datasets. <span style="color:red"> <strong>Make sure the boundary is correct</strong>.</span> You can verify it using <a class="reference external" href="https://mghydro.com/watersheds/">this website</a></p></li>
+</ul>
+<p><img alt="Alt text" src="_images/image-23.png" /></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>If  auto-calibration will be used</strong>. In the <code class="docutils literal notranslate"><span class="pre">observations</span></code> folder, include a single Excel file (<code class="docutils literal notranslate"><span class="pre">observations.xlsx</span></code>, or any name you prefer) that contains all observation time series used for comparison with the model outputs. The required format is described in <a class="reference internal" href="2.Introduce_the_preprocessing_tool.html#calibration-config"><span class="std std-ref">Calibration settings</span></a>.
+I usually place all raw observation files inside the observations folder and then merge them into a single <code class="docutils literal notranslate"><span class="pre">observations.xlsx</span></code>.
+<span style="color:blue">If you do not need auto-calibration, this file is not required.</span></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Optional</strong>:<br />
+If you want to calculate the glacier mass balance from specific glaciers, prepare a CSV file containing the glacier IDs from RGI V7 or V6. The required format is described in <a class="reference internal" href="2.Introduce_the_preprocessing_tool.html#glacier-setting"><span class="std std-ref"> glacier setting</span></a>. <span style="color:blue"> If you skip this file, the program will automatically generate this file which contains all the glacier ids in the basin.</span></p>
+</div>
+<p><img alt="Alt text" src="_images/image-24.png" /></p>
+</section>
+<section id="set-up-the-configuration-file">
+<h2><span class="section-number">3.3. </span>Set Up the Configuration File<a class="headerlink" href="#set-up-the-configuration-file" title="Link to this heading"></a></h2>
+<p>Prepare the configuration file following the instructions in<br />
+<a class="reference internal" href="2.Introduce_the_preprocessing_tool.html#preprocessing-tool-config-section"><span class="std std-ref">Introduction to the Configuration</span></a>. Here I set the out folder to <code class="docutils literal notranslate"><span class="pre">Example/Runmodel</span></code> in the Configuration file. The Runmodel folder will be created automatically and everything will be saved to this folder.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the configuration file, each parameter must be written on a single line. <strong>Do not</strong> split a parameter setting across multiple lines.</p>
+</div>
+<p><img alt="alt text" src="_images/image-45.png" /></p>
+</section>
+<section id="run-the-tool">
+<h2><span class="section-number">3.4. </span>Run the Tool<a class="headerlink" href="#run-the-tool" title="Link to this heading"></a></h2>
+<p>Once the configuration file is ready, go to the <strong>SphySetup-main</strong> directory (downloaded from Github), activate the conda environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pcraster</span> </code> and run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./run_preprocess.sh</span> <span class="pre">preprocess_Alahca.cfg</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that <code class="docutils literal notranslate"><span class="pre">run_preprocess.sh</span></code> is located in the same directory as <code class="docutils literal notranslate"><span class="pre">src</span></code>. Because the script looks for the source code (src) relative to the current working directory.</p>
+<p>The configuration file (<code class="docutils literal notranslate"><span class="pre">preprocess_Alahca.cfg</span></code>) can be saved anywhere.</p>
+<p><img alt="Alt text" src="_images/image-29.png" /></p>
+</div>
+<p>During the first run, the script will take some time to clip the river shapefiles, which speeds up subsequent processing.
+After this step, a folder named <strong>input</strong> will be created inside the <strong>output</strong> directory specified in the configuration file.<br />
+<span style="color:blue">  Open this folder and open <code class="docutils literal notranslate"><span class="pre">sub_basins.map</span></code> in QGIS (or any GIS software) to check whether the generated watershed boundaries match the actual ones. <span></p>
+<p><img alt="Alt text" src="_images/image-31.png" /></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><span style="color:blue"> This step is very important. If the generated boundaries differ noticeably from the actual watershed boundaries, consider the following:</span></p>
+<ul class="simple">
+<li><p><strong>Check whether the DEM resolution matches the model resolution.</strong><br />
+For example, if the model resolution is set to 1000 m, the HydroDEM resolution should also be around 1000 m.</p></li>
+<li><p><strong>Check whether the river network is correct.</strong><br />
+The river network shapefile is located in the cache folder inside the <code class="docutils literal notranslate"><span class="pre">SphySetup-main/src/</span></code> directory.<br />
+If the network extends outside the watershed boundary or connects incorrectly with rivers from another basin, consider manually fixing it or using a different data source.</p></li>
+<li><p><strong>Consider using a different HydroDEM or manually editing the DEM.</strong><br />
+QGIS provides plugins that allow raster value modification.<br />
+<strong>Note:</strong> Only modify the HydroDEM used for watershed extraction — <em>not</em> the actual DEM file.</p></li>
+</ul>
+</div>
+<p>If the watershed boundary is correct, press <strong>y</strong> (yes) to proceed.<br />
+<img alt="Alt text" src="_images/image-33.png" /><br />
+<img alt="Alt text" src="_images/image-34.png" /><br />
+<img alt="Alt text" src="_images/image-35.png" /><br />
+<img alt="Alt text" src="_images/image-36.png" /></p>
+<hr class="docutils" />
+<p>Once the run finishes, a complete package of files and scripts required to run the model will be created in the output directory specified in the configuration file. Under this output directory, you can run the model with and without auto-calibration with simple command. Instructions for running the model are provided in the <a class="reference internal" href="4.Run_model.html"><span class="doc">Run the Model</span></a> chapter.</p>
+<p><img alt="Alt text" src="_images/image-37.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="2.Introduce_the_preprocessing_tool.html" class="btn btn-neutral float-left" title="2. Introduction to the Pre-Processing Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="4.Run_model.html" class="btn btn-neutral float-right" title="4. Run the Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, jingheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

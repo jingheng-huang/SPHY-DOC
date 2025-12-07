@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="yes" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Run the Model &mdash; SPHY Pre-Processing Tool 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=be7ba928"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Run the Pre-Processing Tool" href="3.Run_the_preprocessing_Tool.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHY Pre-Processing Tool
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1.Prepare_Environment.html">1. Set Up the Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.Introduce_the_preprocessing_tool.html">2. Introduction to the Pre-Processing Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.Run_the_preprocessing_Tool.html">3. Run the Pre-Processing Tool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Run the Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-model-without-auto-calibration">4.1. Run the Model without Auto-calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-model-with-auto-calibration">4.2. Run the Model with Auto-calibration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#outputs-structure">4.2.1. Outputs Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#possible-issues">4.2.2. Possible issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHY Pre-Processing Tool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Run the Model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/4.Run_model.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="run-the-model">
+<h1><span class="section-number">4. </span>Run the Model<a class="headerlink" href="#run-the-model" title="Link to this heading"></a></h1>
+<section id="run-the-model-without-auto-calibration">
+<h2><span class="section-number">4.1. </span>Run the Model without Auto-calibration<a class="headerlink" href="#run-the-model-without-auto-calibration" title="Link to this heading"></a></h2>
+<p><img alt="Alt text" src="_images/image-38.png" /></p>
+<hr class="docutils" />
+<p>Enter the <code class="docutils literal notranslate"><span class="pre">Runmodel</span></code> folder, which is the output folder you specified in the configuration file in the previous step. activate the conda environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pcraster</span> </code> and then run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">./run_model.sh</span></code></p>
+<p>The model parameters are stored in the file <code class="docutils literal notranslate"><span class="pre">standard_global.cfg</span></code> located in the same folder. You may modify the parameters, output paths, and other settings as needed.</p>
+</section>
+<section id="run-the-model-with-auto-calibration">
+<h2><span class="section-number">4.2. </span>Run the Model with Auto-calibration<a class="headerlink" href="#run-the-model-with-auto-calibration" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Upload the <code class="docutils literal notranslate"><span class="pre">Runmodel</span></code> and <code class="docutils literal notranslate"><span class="pre">observation</span></code> folders to the cluster. Here I upload them to <code class="docutils literal notranslate"><span class="pre">/public/home/acvfmokn51/</span></code>.</p></li>
+<li><p>Enter the <code class="docutils literal notranslate"><span class="pre">Runmodel</span></code> folder in VS code, using <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">h</span></code> to batch replace the wsl path with the path on the cluster. E.g., Replace the <code class="docutils literal notranslate"><span class="pre">/mnt/f/Example/Runmodel</span></code> to <code class="docutils literal notranslate"><span class="pre">/public/home/acvfmokn51/Runmodel</span></code>. <strong>Or <code class="docutils literal notranslate"><span class="pre">/mnt/f/Example/</span></code> to <code class="docutils literal notranslate"><span class="pre">/public/home/acvfmokn51/</span></code>.</strong> To check your path, using <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to confirm.<br />
+<img alt="alt text" src="_images/image-50.png" /></p></li>
+<li><p>Entering the <code class="docutils literal notranslate"><span class="pre">Run_pest</span> <span class="pre">folder</span></code>, open <code class="docutils literal notranslate"><span class="pre">run_autocali.sh</span></code>. Check whether the  <code class="docutils literal notranslate"><span class="pre">hostname</span></code>, <code class="docutils literal notranslate"><span class="pre">partition</span></code>, and <code class="docutils literal notranslate"><span class="pre">agents_num</span></code>, and other settings are correct. See <a class="reference internal" href="2.Introduce_the_preprocessing_tool.html#calibration-config"><span class="std std-ref">here</span></a> for how to set those parameters.</p></li>
+</ul>
+<p><img alt="Alt text" src="_images/image-42.png" /></p>
+<ul class="simple">
+<li><p>Enter Runmodel/Run_pest folder, Run auto- calibration with <code class="docutils literal notranslate"><span class="pre">./run_autocali.sh</span></code>, you will see something like this:<br />
+<img alt="alt text" src="_images/image-51.png" /></p></li>
+</ul>
+<div class="admonition-optional-settings admonition">
+<p class="admonition-title">Optional settings</p>
+<ul class="simple">
+<li><p><strong>group.csv</strong><br />
+PEST allows parameters to be organized into groups, which helps control how different sets of parameters are adjusted during calibration. A group file defines the parameter groups and their settings, such as group name, derivative calculation method, and regularization options. Each parameter in the parameter file is then assigned to one of these groups. Properly grouping parameters improves calibration stability, allows different update styles for different processes, and enables selective control over parameter sensitivity. By default works well.</p></li>
+</ul>
+<hr class="docutils" />
+<ul>
+<li><p><strong>clean.sh</strong><br />
+The <code class="docutils literal notranslate"><span class="pre">clean.sh</span></code> script is used to remove junk and temporary files. Enter the <code class="docutils literal notranslate"><span class="pre">Run_Pest</span></code> folder and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">clean</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This will clears all intermediate files and results generated, restoring the folder to the state before PEST was executed. This is <strong>very useful when</strong>:</p>
+<ul class="simple">
+<li><p>A run fails and the folder needs to be cleaned before trying again</p></li>
+<li><p>Starting a new auto-calibration</p></li>
+<li><p>Removing outdated results to avoid confusion with new runs</p></li>
+</ul>
+<p><span style="color:red"> <strong>However, be very careful⚠️!!!</strong>  </span>
+Never execute this script outside the <code class="docutils literal notranslate"><span class="pre">Run_Pest</span></code> directory.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="o">./</span><span class="n">master</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">alacha</span><span class="o">/</span><span class="n">Runmodel</span><span class="o">/</span><span class="n">Run_Pest</span><span class="o">/</span><span class="n">clean</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Running like this way will cause the script to clean <strong>the entire parent folder</strong>, potentially deleting important files outside <code class="docutils literal notranslate"><span class="pre">Run_Pest_</span></code>.
+<strong>So always use <code class="docutils literal notranslate"><span class="pre">./clean.sh</span></code> if you want to have a clean folder.</strong></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>tsprocpest.dat</strong><br />
+Control the weight assigned to the observations. You can modify the weights in this file (last several lines).</p></li>
+</ul>
+<p><img alt="alt text" src="_images/image-49.png" /><br />
+PEST minimizes the weighted sum of squared differences between simulations and observations, calculated as</p>
+<div class="math notranslate nohighlight">
+\[\phi = \sum_{i=1}^{m} (w_i r_i)^2 \tag{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi\)</span> is the objective function, (<span class="math notranslate nohighlight">\(m\)</span>) is the total number of time steps in the calibration period, <span class="math notranslate nohighlight">\(w_i\)</span> is the observation weight, and (<span class="math notranslate nohighlight">\(r_i\)</span>) is the difference between simulations and observations.</p>
+<p>Because the discrepancies can be weighted, some observations exert more influence on the optimization outcome than others. Ideally, weights should be chosen at a level commensurate with the measurement noise. Following Clausnitzer &amp; Hopmans (1995), this Pre_processing tool calculate the weight for each observation as</p>
+<div class="math notranslate nohighlight">
+\[w_i = \left( \frac{1}{n_i \sigma_i^{2}} \right)^{1/2} \tag{2}\]</div>
+<p>where <span class="math notranslate nohighlight">\((n_i)\)</span> is the number of observations and <span class="math notranslate nohighlight">\(\sigma_i^2\)</span> is the variance of these observations.</p>
+<p><span style="color:blue"> <strong>The choice of weights can strongly affect the calibration results and often requires experimentation</strong>.</span> In general, the default weights work pretty good.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>pest++option.py</strong><br />
+More advanced PEST settings</p></li>
+</ul>
+</div>
+<section id="outputs-structure">
+<h3><span class="section-number">4.2.1. </span>Outputs Structure<a class="headerlink" href="#outputs-structure" title="Link to this heading"></a></h3>
+<p>After the calibration is done. Here is an example what the <code class="docutils literal notranslate"><span class="pre">Run_Pest</span></code> folder will look like.</p>
+<p><img alt="alt text" src="_images/image-48.png" /></p>
+<p>Some names under this folder are explained as below:</p>
+<ul class="simple">
+<li><p><strong>Agents</strong><br />
+Each agent is like a “worker.” Every worker tests a different combination of parameters.</p></li>
+<li><p><strong>Manager</strong><br />
+The manager is the “controller” that assigns tasks to the agents. For example, deciding which agent tests which parameter combination. After the agents finish their runs, the results are collected by the manager, who then decides the next set of parameter combinations to test. This process continues until convergence.
+In this folder, PEST also stores all information related to the calibration process, such as how the error changes in each iteration (Pest.pst), the best parameter set (Pest.par), and other run-time details.</p></li>
+<li><p><strong>pest_run_report.csv</strong><br />
+This file logs all tested parameter sets. Every parameter combination that has been evaluated will be recorded here, along with the statistic(e.g., NSE). The output path of this file can be changed in standard_global.tpl. By default, it is saved in the parent folder of the Run_Pest directory. I usually won't put it under Run_pest, because the <code class="docutils literal notranslate"><span class="pre">.clean.sh</span></code> may delete this file by mistake.</p></li>
+<li><p><strong>nohup.out</strong>
+The overview for each iteration. Can check if the jobs are successfully sending to the cluster, how many agents are current running and the weighted bias in each iteration.</p></li>
+</ul>
+</section>
+<section id="possible-issues">
+<h3><span class="section-number">4.2.2. </span>Possible issues<a class="headerlink" href="#possible-issues" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>1. Tsproc.exe or pestpp-glm, can not be executed</strong></p>
+<p><img alt="alt text" src="_images/image-46.png" /></p>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">Run_pest</span></code> folder, the required tsproc.exe and pest executables(pestpp-glm, pestpp-ies) are already pre-compiled and can usually be used directly.</p>
+<p>The newest compiled version of <strong>pestpp-glm</strong> or <strong>pestpp-ies</strong> can be downloaded from:  <code class="docutils literal notranslate"><span class="pre">https://github.com/usgs/pestpp</span></code></p>
+<p>If you encounter issues when running those executables, you may need to compile it manually and replace the executables with the new one.  <strong>Reference</strong>: <code class="docutils literal notranslate"><span class="pre">https://github.com/smwesten-usgs/tsproc</span></code> and <code class="docutils literal notranslate"><span class="pre">https://github.com/usgs/pestpp</span></code></p>
+<ul class="simple">
+<li><p><strong>2. Wrong way to send jobs</strong><br />
+By deafult, the job schedulers on cluster is Slurm (Simple Linux Utility for Resource Management). So the way to send one job is</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">#SBATCH --job-name=$name</span>
+<span class="c1">#SBATCH --output=%x-%j.out</span>
+<span class="c1">#SBATCH --time=50:10:00</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --partition=@PARTION</span>
+</pre></div>
+</div>
+<p>If your cluster's  job schedulers are PBS (Portable Batch System). You should use something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#PBS -N $name   </span>
+<span class="c1">#PBS -l nodes=1:ppn=1</span>
+<span class="c1">#PBS -l walltime=200:00:00</span>
+<span class="c1">#PBS -j oe</span>
+</pre></div>
+</div>
+<p>This can be changed in <code class="docutils literal notranslate"><span class="pre">/src/mother_template/utilities/paralell.py</span></code></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3.Run_the_preprocessing_Tool.html" class="btn btn-neutral float-left" title="3. Run the Pre-Processing Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, jingheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

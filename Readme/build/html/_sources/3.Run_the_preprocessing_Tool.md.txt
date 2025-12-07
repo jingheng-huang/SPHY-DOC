@@ -1,0 +1,109 @@
+# Run the Pre_Processing Tool
+
+In this section, an example is provided to show how to use the pre-processing tool to set up the model,
+and how to run the model manually or automatically.
+
+The case basin is **Gunt**, which is located in the Pamir.  
+![Alt text](image-17.png)
+
+![Alt text](image-18.png)  
+Detailed basin information can be found at: https://esurf.copernicus.org/articles/3/333/2015/
+
+## Download the script
+* Create a folder on your local PC. Here, I create a folder called **example** on the F drive.  
+Download the scripts from GitHub:  
+(https://github.com/jingheng-huang/SphySetup)
+
+![Alt text](image-25.png)
+
+The description of the structure has been provided in {doc}`1.Introduce_the_preprocessing_tool`.
+
+## Prepare the basic inputs
+
+Create two folders called **basinshp** and **observations**.  
+You may place them anywhere; here, I put them under **Example**.
+
+![Alt text](image-26.png) 
+
+---
+* In the **basinshp** folder, place a basin shapefile (**projection: WGS84**).  
+This shapefile will be used as the standard basin boundary for clipping the DEM and other datasets.  
+Make sure the boundary is correct. You can verify it using this website:  
+`https://mghydro.com/watersheds/`  
+![Alt text](image-23.png)
+
+---
+* In the **observations** folder, you should include an Excel file (`observations.xlsx`, or any name you prefer)  
+containing all observations used for auto-calibration.  
+If you do **not** need auto-calibration, this file is not required.  
+I usually place all observation files inside the `observations` folder, then merge them into one Excel file.  
+The required format is described in {doc}`1.Introduce_the_preprocessing_tool`.
+
+![Alt text](image-24.png)
+
+````{note}
+**Optional**:  
+If you want to calculate the regional mean glacier mass balance from specific glaciers, prepare a CSV file containing the glacier IDs in RGIv7.  
+The required format is described in Chapter 2.  
+If you skip this file, the program will calculate the regional mean glacier mass balance using **all** glaciers inside the basin.
+````
+
+<span style="color:blue">Note: Folder names are flexible. The key point is to prepare a basin boundary shapefile and, if needed for auto-calibration, the observations.xlsx file — regardless of where you store them.</span>
+
+## Set up the configuration file
+Prepare the configuration file following the instructions in  
+{ref}`Introduction of the Configuration file Section <preprocessing_tool_config_section>`.
+
+![Alt text](image-28.png)
+
+## Run the Tool
+Once the configuration file is ready, go to the **SphySetup-main** directory and run:
+
+`./run_preprocess.sh preprocess_Alahca.cfg`
+
+````{note}
+Make sure that `run_preprocess.sh` is located in the same directory as `src`.  
+The configuration file (`preprocess_Alahca.cfg`) can be saved anywhere.
+
+![Alt text](image-29.png)
+````
+
+During the first run, the script will take some time to clip the river shapefiles, which speeds up subsequent processing.  
+After this step, a folder named **input** will be created inside the output directory specified in the configuration file.  
+Open this folder and load `sub_basins.map` in QGIS (or any GIS software) to check whether the generated watershed boundaries match the actual ones.
+
+![Alt text](image-31.png)
+
+````{important}
+<span style="color:blue">This step is very important. If the generated boundaries differ noticeably from the actual watershed boundaries, consider the following:</span>
+
+* **Check whether the DEM resolution matches the model resolution.**  
+  For example, if the model resolution is set to 1000 m, the HydroDEM resolution should also be around 1000 m.
+
+* **Check whether the river network is correct.**  
+  The river network shapefile is located in the cache folder inside the `SphySetup-main/src/` directory.  
+  If the network extends outside the watershed boundary or connects incorrectly with rivers from another basin, consider manually fixing it or using a different data source.
+
+* **Consider using a different HydroDEM or manually editing the DEM.**  
+  QGIS provides plugins that allow raster value modification.  
+  **Note:** Only modify the HydroDEM used for watershed extraction — *not* the actual DEM file.
+````
+
+If the watershed boundary is correct, press **y** (yes) to proceed.  
+![Alt text](image-33.png)  
+![Alt text](image-34.png)  
+![Alt text](image-35.png)  
+![Alt text](image-36.png)   
+
+Once the run finishes, a complete package of files required to run the model will be created in the output directory specified in the configuration file.  
+Instructions for running the model are provided in the {doc}`4.Run_model` chapter.
+
+![Alt text](image-37.png)   
+
+````{hint}
+The newest version of **pestpp-glm** or **pestpp-ies** can be downloaded from:  
+https://github.com/usgs/pestpp
+
+If you encounter issues when running **tsproc.exe**, you may need to compile it manually.  
+Reference: https://github.com/smwesten-usgs/tsproc
+````

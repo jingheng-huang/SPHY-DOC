@@ -23,7 +23,9 @@ release = '0.1'
 extensions = [
     "sphinx.ext.autodoc",
     "myst_parser",
+    "sphinx.ext.mathjax",
     ]
+
 
 
 templates_path = ['_templates']
@@ -41,4 +43,9 @@ html_static_path = ['_static']
 
 html_css_files = [
     'custom.css',
+]
+
+myst_enable_extensions = [
+    "amsmath",    # 支持 {math} 环境
+    "dollarmath"  # 支持 $...$、$$...$$、\(...\)、\[...\]
 ]

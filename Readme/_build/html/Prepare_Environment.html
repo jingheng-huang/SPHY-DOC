@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="yes" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Set up Environment &mdash; SPHY Pre-Processing Tool 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=be7ba928"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Introduction of Pre-Processing Tool" href="Introduce_the_preprocessing_tool.html" />
+    <link rel="prev" title="Welcome to SPHY Preprocess Tutorial!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SPHY Pre-Processing Tool
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Set up Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#download-and-install-visual-studio-code-vs-code">1.1. Download and Install Visual Studio Code (VS Code)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connect-vs-code-to-the-cluster">1.2. Connect VS Code to the Cluster</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-install-the-remote-ssh-extension">1.2.1. Step 1: Install the <strong>Remote - SSH</strong> Extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-configure-the-cluster-host-information">1.2.2. Step 2: Configure the Cluster <strong>Host Information</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-connect-to-the-server">1.2.3. Step 3: Connect to the Server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-conda-environment">1.3. Create the Conda Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-open-vs-code-and-open-the-terminal">1.3.1. Step 1: Open VS Code and Open the Terminal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-create-the-environment-from-the-yaml-file">1.3.2. Step 2: Create the Environment from the YAML File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-required-system-packages">1.3.3. Install Required System Packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Introduce_the_preprocessing_tool.html">2. Introduction of Pre-Processing Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Run_the_preprocessing_Tool.html">3. Run the Pre_Processing Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Run_model.html">4. Run Model</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SPHY Pre-Processing Tool</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Set up Environment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Prepare_Environment.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="set-up-environment">
+<h1><span class="section-number">1. </span>Set up Environment<a class="headerlink" href="#set-up-environment" title="Link to this heading"></a></h1>
+<section id="download-and-install-visual-studio-code-vs-code">
+<h2><span class="section-number">1.1. </span>Download and Install Visual Studio Code (VS Code)<a class="headerlink" href="#download-and-install-visual-studio-code-vs-code" title="Link to this heading"></a></h2>
+<p>👉 https://code.visualstudio.com/</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some older servers do not support connections to the latest version of VS Code.<br />
+If you are using an older server, it is recommended to use <strong>version 1.85.2 or earlier</strong>.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="connect-vs-code-to-the-cluster">
+<h2><span class="section-number">1.2. </span>Connect VS Code to the Cluster<a class="headerlink" href="#connect-vs-code-to-the-cluster" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>If you do not plan to use Auto‑calibration, then a cluster is not required and you may skip this section.</p></li>
+<li><p>Any Linux system will work. On Windows, you can simply connect VS Code to WSL to run the model. Refer to the links below:
+https://learn.microsoft.com/en-us/windows/wsl/install<br />
+https://code.visualstudio.com/docs/remote/wsl</p></li>
+</ul>
+</div>
+<section id="step-1-install-the-remote-ssh-extension">
+<h3><span class="section-number">1.2.1. </span>Step 1: Install the <strong>Remote - SSH</strong> Extension<a class="headerlink" href="#step-1-install-the-remote-ssh-extension" title="Link to this heading"></a></h3>
+<p><img alt="Install Remote SSH Extension" src="_images/install_ssh.png" /></p>
+</section>
+<section id="step-2-configure-the-cluster-host-information">
+<h3><span class="section-number">1.2.2. </span>Step 2: Configure the Cluster <strong>Host Information</strong><a class="headerlink" href="#step-2-configure-the-cluster-host-information" title="Link to this heading"></a></h3>
+<p><img alt="open configure" src="_images/open_config.png" /></p>
+<p>After opening the SSH config file, enter the login details for your cluster.</p>
+<div class="admonition-example-a admonition">
+<p class="admonition-title">Example A</p>
+<p>Normal connection:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host<span class="w"> </span>cancon.hpccube.com
+<span class="w">    </span>HostName<span class="w"> </span>cancon.hpccube.com
+<span class="w">    </span>Port<span class="w"> </span><span class="m">65023</span>
+<span class="w">    </span><span class="c1"># IdentityFile &lt;path_to_id_rsa.pub&gt;</span>
+<span class="w">    </span>User<span class="w"> </span>acvfmokn51
+</pre></div>
+</div>
+</div>
+<div class="admonition-example-b admonition">
+<p class="admonition-title">Example B</p>
+<p>Some clusters require jumping to an available compute node.<br />
+You can type <strong>sinfo</strong> to check the available nodes in the Slurm system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host<span class="w"> </span>unifr
+<span class="w">    </span>HostName<span class="w"> </span>beo05.unifr.ch
+<span class="w">    </span>User<span class="w"> </span>huangj
+<span class="w">    </span>Port<span class="w"> </span><span class="m">22</span>
+<span class="w">    </span><span class="c1"># IdentityFile &lt;path_to_id_rsa.pub&gt;</span>
+
+Host<span class="w"> </span>node-compute
+<span class="w">    </span>HostName<span class="w"> </span>node84
+<span class="w">    </span>ProxyJump<span class="w"> </span>unifr
+<span class="w">    </span>User<span class="w"> </span>huangj
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>👉 If you don’t want to enter your password every time, you need to create an SSH key.<br />
+In some clusters, this is required.</p>
+<ul class="simple">
+<li><p>Open a bash shell or command line and type:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">C:\Users\XXX\.ssh</span></code> (XXX = your username), you will find <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>.<br />
+Copy the content into <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> on the server.</p></li>
+<li><p>For Mac users, the procedure is the same:<br />
+https://mdl.library.utoronto.ca/technology/tutorials/generating-ssh-key-pairs-mac</p></li>
+</ul>
+<p><strong>Reference:</strong><br />
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</p>
+</div>
+</section>
+<section id="step-3-connect-to-the-server">
+<h3><span class="section-number">1.2.3. </span>Step 3: Connect to the Server<a class="headerlink" href="#step-3-connect-to-the-server" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first connection may take some time.</p>
+</div>
+<p><img alt="connect to server" src="_images/connect_to_server.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="create-the-conda-environment">
+<h2><span class="section-number">1.3. </span>Create the Conda Environment<a class="headerlink" href="#create-the-conda-environment" title="Link to this heading"></a></h2>
+<p>Use <strong>Conda</strong> or <strong>Mamba</strong> to create an isolated Python environment for SPHY.</p>
+<section id="step-1-open-vs-code-and-open-the-terminal">
+<h3><span class="section-number">1.3.1. </span>Step 1: Open VS Code and Open the Terminal<a class="headerlink" href="#step-1-open-vs-code-and-open-the-terminal" title="Link to this heading"></a></h3>
+<p><img alt="connect to server" src="_images/open_bash.png" /></p>
+<p>Install the Linux version of Miniconda:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash<span class="w"> </span>~/Miniconda3-latest-Linux-x86_64.sh
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using WSL, make sure you open the correct WSL target.</p>
+</div>
+</section>
+<section id="step-2-create-the-environment-from-the-yaml-file">
+<h3><span class="section-number">1.3.2. </span>Step 2: Create the Environment from the YAML File<a class="headerlink" href="#step-2-create-the-environment-from-the-yaml-file" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Download all necessary files from https://github.com/jingheng-huang/SphySetup<br />
+(or use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>) into a single folder on your Linux system.</p></li>
+</ul>
+<p><img alt="Alt text" src="_images/github_downloadcode.png" /></p>
+<ul class="simple">
+<li><p>Create the environment using the YAML file:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p><img alt="Alt text" src="_images/location_of_yaml.png" /></p>
+<p>Once installation is complete, test whether the environment works:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>pcraster
+</pre></div>
+</div>
+</section>
+<section id="install-required-system-packages">
+<h3><span class="section-number">1.3.3. </span>Install Required System Packages<a class="headerlink" href="#install-required-system-packages" title="Link to this heading"></a></h3>
+<p>Ubuntu example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nco<span class="w"> </span>cdo
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdal-bin<span class="w"> </span>libgdal-dev
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The database can be downloaded from XX.<br />
+It is very large and may take a long time to download.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to SPHY Preprocess Tutorial!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Introduce_the_preprocessing_tool.html" class="btn btn-neutral float-right" title="2. Introduction of Pre-Processing Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, jingheng.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
